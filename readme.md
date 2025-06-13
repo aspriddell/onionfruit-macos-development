@@ -14,4 +14,11 @@ This project provides prebuilt copies of native libs/binaries for when a develop
 You'll need at least the ServiceLoader and `libonionfruit` to run a debug copy of OnionFruit. If changes are required to be made to either the library or daemon, they'll need to be modified and rebuilt from the Xcode project:
 
 1. Download and install ServiceLoader to /Applications, follow setup process to install the service (you'll need to manually approve the installation, but you need to on the main app anyways).
-2. Download and copy libonionfruit.dylib to `DragonFruit.OnionFruit.Core.MacOS/Native`.
+2. Clone the main project, download the library and resign for the current machine
+
+```bash
+LIBONIONFRUIT_PATH="./DragonFruit.OnionFruit.Core.MacOS/Native/libonionfruit.dylib"
+
+curl -o $LIBONIONFRUIT_PATH "https://github.com/aspriddell/onionfruit-macos-development/releases/latest/download/libonionfruit.dylib"
+codesign --force --sign - $LIBONIONFRUIT_PATH
+```
