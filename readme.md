@@ -19,6 +19,6 @@ You'll need at least the ServiceLoader and `libonionfruit` to run a debug copy o
 ```bash
 LIBONIONFRUIT_PATH="./DragonFruit.OnionFruit.Core.MacOS/Native/libonionfruit.dylib"
 
-curl -o $LIBONIONFRUIT_PATH "https://github.com/aspriddell/onionfruit-macos-development/releases/latest/download/libonionfruit.dylib"
+curl -L -o $LIBONIONFRUIT_PATH "https://github.com/aspriddell/onionfruit-macos-development/releases/latest/download/libonionfruit.dylib"
 codesign --force --sign - $LIBONIONFRUIT_PATH
 ```
